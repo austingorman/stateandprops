@@ -15,7 +15,11 @@ export default class AnimalList extends Component {
   render() {
     return (
       <React.Fragment>
-        <ul>{this.state.animals.map(animal => <li>{animal.name}</li>)}</ul>
+        <ul>
+          {this.state.animals.map(animal => (
+            <Animal key={animal.id} animal={animal} />
+          ))}
+        </ul>
       </React.Fragment>
     );
   }

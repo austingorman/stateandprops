@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Location from "./Animal";
+import Location from "./Location";
 
 export default class LocationList extends Component {
   state = {
@@ -9,7 +9,9 @@ export default class LocationList extends Component {
     return (
       <React.Fragment>
         <ul>
-          {this.state.locations.map(location => <li>{location.name}</li>)}
+          {this.state.locations.map(location => (
+            <Location key={location.id} location={location} />
+          ))}
         </ul>
       </React.Fragment>
     );
