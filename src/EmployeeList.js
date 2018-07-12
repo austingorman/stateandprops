@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Location from "./Location";
 
 export default class EmployeeList extends Component {
   state = {
@@ -8,17 +9,14 @@ export default class EmployeeList extends Component {
       { name: "Zoe LeBlanc" },
       { name: "Blaise Roberts" }
     ]
-  }
+  };
 
   render() {
     return (
       <React.Fragment>
-        {
-          this.state.employees.map(employee =>
-            <div>
-              {employee.name}
-            </div>)
-        }
+        <ul>
+          {this.state.employees.map(employee => <li>{employee.name}</li>)}
+        </ul>
       </React.Fragment>
     );
   }
