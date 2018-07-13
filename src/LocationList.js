@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import Location from "./Location";
+import APIManager from "./APIManager";
 
 export default class LocationList extends Component {
-  state = {
-    locations: []
-  };
+  state = { locations: [] };
 
   componentDidMount() {
-    fetch("http://localhost:5002/locations")
-      .then(e => e.json())
-      .then(locations => this.setState({ locations: locations }));
+    APIManager.getLocations().then(locations =>
+      this.setState({
+        locations: locations
+      })
+    );
   }
+
   render() {
     return (
       <React.Fragment>
