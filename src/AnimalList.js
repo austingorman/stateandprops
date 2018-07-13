@@ -3,21 +3,22 @@ import Animal from "./Animal";
 
 export default class AnimalList extends Component {
   state = {
-    animals: [
-      { id: 1, name: "Doodles", breed: "German Shepherd" },
-      { id: 2, name: "Jack", breed: "Cocker Spaniel" },
-      { id: 3, name: "Angus", breed: "Dalmatian" },
-      { id: 4, name: "Henley", breed: "Carolina Retriever" },
-      { id: 5, name: "Derkins", breed: "Pug" },
-      { id: 6, name: "Checkers", breed: "Bulldog" }
-    ]
+    animals: []
   };
+
+  componentDidMount() {
+    fetch("http://localhost:5002/animals")
+      .then(e => e.json())
+      .then(animals => this.setState({ animals: animals }));
+  }
   render() {
     return (
       <React.Fragment>
         <ul>
           {this.state.animals.map(animal => (
-            <Animal key={animal.id} animal={animal} />
+            <Animal key={animal.id} animal={animal}>
+              {animal.name}
+            </Animal>
           ))}
         </ul>
       </React.Fragment>
