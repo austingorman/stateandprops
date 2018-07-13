@@ -3,7 +3,10 @@ import Location from "./Location";
 
 export default class LocationList extends Component {
   state = {
-    locations: [{ name: "Nashville North" }, { name: "Nashville South" }]
+    locations: [
+      { id: 1, name: "Nashville North" },
+      { id: 2, name: "Nashville South" }
+    ]
   };
   render() {
     return (
