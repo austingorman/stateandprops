@@ -29,11 +29,6 @@
   ],
   "animals": [
     {
-      "id": 3,
-      "name": "Angus",
-      "breed": "Dalmatian"
-    },
-    {
       "id": 5,
       "name": "Derkins",
       "breed": "Pug"
@@ -47,6 +42,16 @@
       "name": "Hugo",
       "breed": "Boston Terrier",
       "id": 7
+    },
+    {
+      "name": "Harvey",
+      "breed": "Goodboi",
+      "id": 8
+    },
+    {
+      "name": "Gypsy",
+      "breed": "LOOOOOONG dog",
+      "id": 9
     }
   ]
 }
